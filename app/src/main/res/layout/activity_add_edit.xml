@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="mClickHandler"
+            type="com.example.mmvvm.AddEditActivity.AddEditClickHandler" />
+        <variable
+            name="mCourse"
+            type="com.example.mmvvm.model.Course" />
+    </data>
+
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            tools:context=".AddEditActivity">
+
+            <EditText
+                android:hint="@string/name"
+                android:id="@+id/Course_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={mCourse.courseName}" />
+
+            <EditText
+                android:hint="@string/price"
+                android:id="@+id/course_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={mCourse.unitPrice}"
+              />
+
+            <Button
+                android:id="@+id/button"
+                android:onClick="@{mClickHandler::onSubmit}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:text="@string/submit" />
+        </LinearLayout>
+</layout>
